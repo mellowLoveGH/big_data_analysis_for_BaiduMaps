@@ -1,0 +1,103 @@
+report -> sql
+
+
+
+CREATE TABLE t01_pv_uv( report_date varchar(10) primary key, pv BIGINT, uv BIGINT);
+
+CREATE TABLE t02_pv_source( report_date varchar(10) primary key, 
+nlp_quantity BIGINT, nlp_ratio double, 
+map_quantity BIGINT, map_ratio double, 
+op_quantity BIGINT, op_ratio double, 
+pv BIGINT);
+
+CREATE TABLE t03_pv_inout( report_date varchar(10) primary key, 
+minus_quantity BIGINT, minus_ratio double, 
+zero_quantity BIGINT, zero_ratio double, 
+one_quantity BIGINT, one_ratio double, 
+two_quantity BIGINT, two_ratio double, 
+three_quantity BIGINT, three_ratio double, 
+pv BIGINT);
+
+CREATE TABLE t04_pv_cell( report_date varchar(10) primary key, 
+valid_quantity BIGINT, valid_ratio double, 
+invalid_quantity BIGINT, invalid_ratio double, 
+pv BIGINT);
+
+CREATE TABLE t05_pv_wf( report_date varchar(10) primary key, 
+wf_quantity BIGINT, wf_ratio double, 
+pv BIGINT);
+
+CREATE TABLE t06_pv_gps( report_date varchar(10) primary key, 
+gps_quantity BIGINT, gps_ratio double, 
+pv BIGINT);
+
+CREATE TABLE t07_gps_cities( report_date varchar(10) primary key, 
+main_quantity BIGINT, main_ratio double, 
+other_quantity BIGINT, other_ratio double, 
+gps BIGINT);
+
+CREATE TABLE t08_gps_source( report_date varchar(10) primary key, 
+nlp_quantity BIGINT, nlp_ratio double, 
+map_quantity BIGINT, map_ratio double, 
+op_quantity BIGINT, op_ratio double, 
+gps BIGINT);
+
+CREATE TABLE t09_gps_main_source( report_date varchar(10) primary key, 
+nlp_quantity BIGINT, nlp_ratio double, 
+map_quantity BIGINT, map_ratio double, 
+op_quantity BIGINT, op_ratio double, 
+main_gps BIGINT);
+
+CREATE TABLE t10_gps_other_source( report_date varchar(10) primary key, 
+nlp_quantity BIGINT, nlp_ratio double, 
+map_quantity BIGINT, map_ratio double, 
+op_quantity BIGINT, op_ratio double, 
+other_gps BIGINT);
+
+CREATE TABLE t11_gps_valid_source( report_date varchar(10) primary key, 
+nlp_quantity BIGINT, nlp_ratio double, 
+map_quantity BIGINT, map_ratio double, 
+op_quantity BIGINT, op_ratio double, 
+valid_gps BIGINT);
+
+CREATE TABLE t12_gps_valid_main_source( report_date varchar(10) primary key, 
+nlp_quantity BIGINT, nlp_ratio double, 
+map_quantity BIGINT, map_ratio double, 
+op_quantity BIGINT, op_ratio double, 
+vm_gps BIGINT);
+
+CREATE TABLE t13_gps_valid_other_source( report_date varchar(10) primary key, 
+nlp_quantity BIGINT, nlp_ratio double, 
+map_quantity BIGINT, map_ratio double, 
+op_quantity BIGINT, op_ratio double, 
+vo_gps BIGINT);
+
+CREATE TABLE t14_success_rate( report_date varchar(10) primary key, 
+cell_quantity BIGINT, cell_ratio double, 
+wf_quantity BIGINT, wf_ratio double, 
+prop_quantity BIGINT, prop_ratio double, 
+fp_quantity BIGINT, fp_ratio double, 
+cls_quantity BIGINT, cls_ratio double);
+
+CREATE TABLE t15_accuracy_rate( report_date varchar(10) ,
+category varchar(10),
+city varchar(10),
+lt30_quantity BIGINT, lt30_ratio double, 
+lt50_quantity BIGINT, lt50_ratio double, 
+lt100_quantity BIGINT, lt100_ratio double, 
+lt500_quantity BIGINT, lt500_ratio double, 
+lt1000_quantity BIGINT, lt1000_ratio double, 
+mt1000_quantity BIGINT, mt1000_ratio double,
+primary key(report_date, category, city)  );
+
+
+
+
+
+
+
+
+
+
+
+
